@@ -30,7 +30,7 @@ const AnimalsSchema = new mongoose.Schema<AnimalInterface>({
     removed: {type: Boolean},
     subTypes: {type: String},
     deregisterReason: { type: mongoose.Schema.Types.ObjectId , ref: "DeregisterReasons" },
-    deregisterNote: { type: String },
+    deregisterNote: { type: mongoose.Schema.Types.ObjectId , ref: "DeregisterNote"},
     deregisterDate: { type: Date },
     deregisterSubReason: { type: String },
     ...commonSchemaPaths,

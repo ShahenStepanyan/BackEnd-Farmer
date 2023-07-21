@@ -10,7 +10,7 @@ const AnimalProblemsListSchema = new mongoose_1.default.Schema(Object.assign({ p
         required: [false, "Amount is required"],
         unique: true,
     }, animal: {
-        type: String,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: [false, "Date is required"],
         unique: true,
     }, onBirth: {
@@ -18,7 +18,7 @@ const AnimalProblemsListSchema = new mongoose_1.default.Schema(Object.assign({ p
         required: [false, "Date is required"],
         unique: true,
     }, type: {
-        type: String,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: [false, "Date is required"],
         unique: true,
     }, date: {

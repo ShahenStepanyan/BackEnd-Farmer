@@ -14,7 +14,7 @@ const SpendingsListSchema = new mongoose.Schema({
     unique: true,
   },
   type: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     required: [false, "Date is required"],
     unique: true,
   },

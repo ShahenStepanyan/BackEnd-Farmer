@@ -18,7 +18,7 @@ function formatNumber(num) {
         .fill("0")
         .join("")}${numStr}`;
 }
-const AnimalsSchema = new mongoose_1.default.Schema(Object.assign({ animalType: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "AnimalTypes" }, serialNumber: { type: String, validate: validateSerialNumber }, weight: { type: Number }, gender: { type: String, enum: Animal_1.GenderEnum }, parent: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Animals" }, parentNumber: { type: String, validate: validateSerialNumber }, birthDate: { type: Date }, removed: { type: Boolean }, subTypes: { type: String }, deregisterReason: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "DeregisterReasons" }, deregisterNote: { type: String }, deregisterDate: { type: Date }, deregisterSubReason: { type: String } }, _1.commonSchemaPaths));
+const AnimalsSchema = new mongoose_1.default.Schema(Object.assign({ animalType: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "AnimalTypes" }, serialNumber: { type: String, validate: validateSerialNumber }, weight: { type: Number }, gender: { type: String, enum: Animal_1.GenderEnum }, parent: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Animals" }, parentNumber: { type: String, validate: validateSerialNumber }, birthDate: { type: Date }, removed: { type: Boolean }, subTypes: { type: String }, deregisterReason: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "DeregisterReasons" }, deregisterNote: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "DeregisterNote" }, deregisterDate: { type: Date }, deregisterSubReason: { type: String } }, _1.commonSchemaPaths));
 (0, _1.commonPreHooks)(AnimalsSchema);
 // AnimalsSchema.pre("save", async function (next) {
 //     if (this.parent) {

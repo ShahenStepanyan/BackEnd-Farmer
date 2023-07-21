@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 import { commonPreHooks, commonSchemaPaths } from ".";
 
-const AnimalSubTypesSchema = new mongoose.Schema({
+const AnimalSubTypesSchema = new mongoose.Schema<any>({
     name: {
         type: String,
         required: [true, "Name is required"],
         unique: true,
     },
     animalType: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
       required: [true, "Name is required"],
       unique: true,
   },

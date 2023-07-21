@@ -9,7 +9,7 @@ const AnimalProblemsListSchema = new mongoose.Schema({
     unique: true,
   },
   animal: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     required: [false, "Date is required"],
     unique: true,
   },
@@ -19,7 +19,7 @@ const AnimalProblemsListSchema = new mongoose.Schema({
     unique: true,
   },
   type: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     required: [false, "Date is required"],
     unique: true,
   },

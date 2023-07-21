@@ -14,7 +14,7 @@ const SpendingsListSchema = new mongoose_1.default.Schema(Object.assign({ amount
         required: [false, "Date is required"],
         unique: true,
     }, type: {
-        type: String,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: [false, "Date is required"],
         unique: true,
     } }, _1.commonSchemaPaths));

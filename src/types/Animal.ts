@@ -17,7 +17,7 @@ export interface AnimalInterface extends SchemaInterface {
     subTypes?: string
     birthDate: Date;
     deregisterReason?: Types.ObjectId | String;
-    deregisterNote?: string;
+    deregisterNote?: Types.ObjectId | String;
     deregisterDate?: Date;
     deregisterSubReason?: string;
 }
