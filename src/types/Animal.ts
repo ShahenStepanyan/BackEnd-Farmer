@@ -20,6 +20,7 @@ export interface AnimalInterface extends SchemaInterface {
     deregisterNote?: Types.ObjectId | String;
     deregisterDate?: Date;
     deregisterSubReason?: string;
+    animals?:string
 }
 
 export type AnimalDocument = DocumentInterface<AnimalInterface>;

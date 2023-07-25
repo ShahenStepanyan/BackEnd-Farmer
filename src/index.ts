@@ -15,11 +15,13 @@ import animalTypesRouter from "./controllers/animalTypes";
 import spendingsRouter from "./controllers/spendings";
 import animalsRouter from "./controllers/animals";
 import weightsRouter from "./controllers/weights";
+import getAnimalsDiedRouter from "./controllers/getAnimalsDied"
 import notificationsRouter from "./controllers/notifications";
 import selectFieldsRouter from "./controllers/selectFields";
 import selectSubFieldsRouter from "./controllers/selectSubFields";
 import AnimalsProblemsRouter from "./controllers/animalsProblems";
-
+import getAnimalsSoldRouter from "./controllers/getAnimalsSold"
+import getChildrensRouter from "./controllers/animalsChildrens"
 
 const app = express();
 
@@ -34,7 +36,6 @@ app.use(passport.initialize());
 app.use(checkCors);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser())
 
 app.use("/api/auth", authRouter);
 app.use("/api/users", authenticateAdmin, usersRouter);
@@ -42,11 +43,14 @@ app.use("/api/animal-types", authenticate, animalTypesRouter);
 app.use("/api/animals", authenticate, animalsRouter);
 app.use("/api/weights", authenticate, weightsRouter);
 app.use("/api/notifications", authenticate, notificationsRouter);
+app.use("/api/get-animals-childrens", authenticate, getChildrensRouter)
 app.use("/api/select-fields", authenticate, selectFieldsRouter);
 app.use("/api/spendings", authenticate, spendingsRouter )
 app.use("/api/select-sub-fields", authenticate, selectSubFieldsRouter);
 app.use("/api/animalsubtype", authenticate, animalSubTypesRouter)
 app.use("/api/animalproblems", authenticate, AnimalsProblemsRouter )
+app.use("/api/get-animals-died", authenticate, getAnimalsDiedRouter)
+app.use("/api/get-animals-sold", authenticate, getAnimalsSoldRouter)
 if (port) {
   app.listen(port, () => {
     console.info(`App started: listening at http://localhost:${port}/`);
